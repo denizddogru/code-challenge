@@ -3,7 +3,6 @@
 <img src="https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"/>
 <img src="https://img.shields.io/badge/PostgreSQL-16-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
 <img src="https://img.shields.io/badge/EF_Core-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"/>
-<img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
 
 # ⚽ Adesso World League
 
@@ -227,4 +226,10 @@ PostgreSQL
 
 ---
 
+<div align="center">
 
+📄 [`docs/documentation-en.md`](docs/documentation-en.md) · [`docs/documentation-tr.md`](docs/documentation-tr.md) · [`docs/testing.md`](docs/testing.md)
+
+Made with ❤️ for Adesso Code Challenge
+
+</div>
