@@ -7,9 +7,9 @@
 
 # ⚽ Adesso World League
 
----
 
-## 🖼️ Screenshots
+
+## Screenshots
 
 <table>
 <tr>
@@ -42,12 +42,12 @@ Includes a lightweight **draw UI** served directly from the API — no separate 
 
 ## Features
 
-- 🖥️ **Draw UI** — simple web interface, no extra setup
-- 🎲 **Randomized draw** — round-robin with live country constraint checks
-- 🗃️ **PostgreSQL persistence** — every draw saved with drawer info
-- 🌐 **Dual API docs** — Scalar (DeepSpace) + Swagger UI
-- 🌍 **Localization** — error messages in TR (default) and EN
-- ⚙️ **Configurable groups** — `n = 4` (8 teams/group) or `n = 8` (4 teams/group)
+-  **Draw UI** — simple web interface, no extra setup
+-  **Randomized draw** — round-robin with live country constraint checks
+-  **PostgreSQL persistence** — every draw saved with drawer info
+-  **Dual API docs** — Scalar (DeepSpace) + Swagger UI
+-  **Localization** — error messages in TR (default) and EN
+-  **Configurable groups** — `n = 4` (8 teams/group) or `n = 8` (4 teams/group)
 
 ## Quick Start
 
@@ -62,9 +62,9 @@ dotnet run
 
 | | URL |
 |---|---|
-| 🖥️ **Draw UI** | `http://localhost:5116` |
-| 📘 **Scalar** | `http://localhost:5116/scalar` |
-| 📗 **Swagger** | `http://localhost:5116/swagger` |
+|  **Draw UI** | `http://localhost:5116` |
+|  **Scalar** | `http://localhost:5116/scalar` |
+|  **Swagger** | `http://localhost:5116/swagger` |
 
 ## API
 
@@ -112,12 +112,12 @@ Ayrı bir frontend projesine gerek kalmadan doğrudan API'den sunulan hafif bir 
 
 ## Özellikler
 
-- 🖥️ **Kura UI** — basit web arayüzü, ek kurulum gerektirmez
-- 🎲 **Rastgele kura** — anlık ülke kısıt kontrolüyle round-robin slot dolumu
-- 🗃️ **PostgreSQL kalıcılığı** — her kura kurayı çekenin bilgisiyle kaydedilir
-- 🌐 **Çift API dökümanı** — Scalar (DeepSpace) + Swagger UI
-- 🌍 **Lokalizasyon** — hata mesajları TR (varsayılan) ve EN
-- ⚙️ **Yapılandırılabilir grup** — `n = 4` (grup başına 8 takım) veya `n = 8` (grup başına 4 takım)
+-  **Kura UI** — basit web arayüzü, ek kurulum gerektirmez
+-  **Rastgele kura** — anlık ülke kısıt kontrolüyle round-robin slot dolumu
+-  **PostgreSQL kalıcılığı** — her kura kurayı çekenin bilgisiyle kaydedilir
+-  **Çift API dökümanı** — Scalar (DeepSpace) + Swagger UI
+-  **Lokalizasyon** — hata mesajları TR (varsayılan) ve EN
+-  **Yapılandırılabilir grup** — `n = 4` (grup başına 8 takım) veya `n = 8` (grup başına 4 takım)
 
 ## Hızlı Başlangıç
 
@@ -132,9 +132,9 @@ dotnet run
 
 | | URL |
 |---|---|
-| 🖥️ **Kura UI** | `http://localhost:5116` |
-| 📘 **Scalar** | `http://localhost:5116/scalar` |
-| 📗 **Swagger** | `http://localhost:5116/swagger` |
+|  **Kura UI** | `http://localhost:5116` |
+|  **Scalar** | `http://localhost:5116/scalar` |
+|  **Swagger** | `http://localhost:5116/swagger` |
 
 ## API
 
@@ -177,12 +177,11 @@ Content-Type: application/json
 
 
 
----
 
 <table>
 <tr>
-<th width="50%">🇬🇧 Architecture</th>
-<th width="50%">🇹🇷 Mimari</th>
+<th width="50%"> Architecture</th>
+<th width="50%"> Mimari</th>
 </tr>
 <tr>
 <td valign="top">
