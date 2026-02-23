@@ -1,4 +1,4 @@
-# Adesso World League API — Teknik Dokümantasyon (TR)
+# World League API — Teknik Dokümantasyon (TR)
 
 ## 1. Teknoloji Seçimleri
 
@@ -53,7 +53,7 @@ HTTP İsteği
 ### Klasör Yapısı
 
 ```
-src/AdessoWorldLeague.API/
+src/WorldLeague.API/
 ├── Abstractions/           → ITeamDataProvider + TeamRecord
 ├── Controllers/            → DrawController (yalnızca HTTP katmanı)
 ├── Data/                   → AppDbContext + EF entity konfigürasyonu

@@ -1,8 +1,8 @@
-# Adesso World League - Code Challenge
+# World League - Code Challenge
 
 ## Project Overview
 
-Build a .NET Core Web API that performs a group draw for the **Adesso World League**.
+Build a .NET Core Web API that performs a group draw for the **World League**.
 
 ## Domain
 
@@ -14,14 +14,14 @@ Build a .NET Core Web API that performs a group draw for the **Adesso World Leag
 
 | Country     | Teams                                                                  |
 |-------------|------------------------------------------------------------------------|
-| Türkiye     | Adesso İstanbul, Adesso Ankara, Adesso İzmir, Adesso Antalya           |
-| Almanya     | Adesso Berlin, Adesso Frankfurt, Adesso Münih, Adesso Dortmund         |
-| Fransa      | Adesso Paris, Adesso Marsilya, Adesso Nice, Adesso Lyon                |
-| Hollanda    | Adesso Amsterdam, Adesso Rotterdam, Adesso Lahey, Adesso Eindhoven     |
-| Portekiz    | Adesso Lisbon, Adesso Porto, Adesso Braga, Adesso Coimbra              |
-| İtalya      | Adesso Roma, Adesso Milano, Adesso Venedik, Adesso Napoli              |
-| İspanya     | Adesso Sevilla, Adesso Madrid, Adesso Barselona, Adesso Granada        |
-| Belçika     | Adesso Brüksel, Adesso Brugge, Adesso Gent, Adesso Anvers              |
+| Türkiye     | İstanbul, Ankara, İzmir, Antalya           |
+| Almanya     | Berlin, Frankfurt, Münih, Dortmund         |
+| Fransa      | Paris, Marsilya, Nice, Lyon                |
+| Hollanda    | Amsterdam, Rotterdam, Lahey, Eindhoven     |
+| Portekiz    | Lisbon, Porto, Braga, Coimbra              |
+| İtalya      | Roma, Milano, Venedik, Napoli              |
+| İspanya     | Sevilla, Madrid, Barselona, Granada        |
+| Belçika     | Brüksel, Brugge, Gent, Anvers              |
 
 ## Business Rules
 
@@ -49,19 +49,19 @@ Build a .NET Core Web API that performs a group draw for the **Adesso World Leag
     {
       "groupName": "A",
       "teams": [
-        { "name": "Adesso İstanbul" },
-        { "name": "Adesso Berlin" },
-        { "name": "Adesso Marsilya" },
-        { "name": "Adesso Anvers" }
+        { "name": "İstanbul" },
+        { "name": "Berlin" },
+        { "name": "Marsilya" },
+        { "name": "Anvers" }
       ]
     },
     {
       "groupName": "B",
       "teams": [
-        { "name": "Adesso İzmir" },
-        { "name": "Adesso Dortmund" },
-        { "name": "Adesso Barselona" },
-        { "name": "Adesso Venedik" }
+        { "name": "İzmir" },
+        { "name": "Dortmund" },
+        { "name": "Barselona" },
+        { "name": "Venedik" }
       ]
     }
   ]

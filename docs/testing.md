@@ -8,7 +8,7 @@ Uygulama başladığında tablolar **otomatik oluşturulur** ve örnek veri **ot
 
 ## 2. Connection String
 
-`src/AdessoWorldLeague.API/appsettings.json` dosyasındaki bağlantı bilgisini kendi PostgreSQL ayarlarınla güncelle:
+`src/WorldLeague.API/appsettings.json` dosyasındaki bağlantı bilgisini kendi PostgreSQL ayarlarınla güncelle:
 
 ```json
 "ConnectionStrings": {
@@ -21,7 +21,7 @@ Uygulama başladığında tablolar **otomatik oluşturulur** ve örnek veri **ot
 ## 3. Uygulamayı Başlat
 
 ```bash
-cd src/AdessoWorldLeague.API
+cd src/WorldLeague.API
 dotnet run
 ```
 
@@ -74,19 +74,19 @@ dotnet run
     {
       "groupName": "A",
       "teams": [
-        { "name": "Adesso İstanbul" },
-        { "name": "Adesso Berlin" },
-        { "name": "Adesso Marsilya" },
-        { "name": "Adesso Anvers" }
+        { "name": "İstanbul" },
+        { "name": "Berlin" },
+        { "name": "Marsilya" },
+        { "name": "Anvers" }
       ]
     },
     {
       "groupName": "B",
       "teams": [
-        { "name": "Adesso İzmir" },
-        { "name": "Adesso Dortmund" },
-        { "name": "Adesso Barselona" },
-        { "name": "Adesso Venedik" }
+        { "name": "İzmir" },
+        { "name": "Dortmund" },
+        { "name": "Barselona" },
+        { "name": "Venedik" }
       ]
     }
   ]

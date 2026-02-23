@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/WorldLeague.API/WorldLeague.API.csproj" />
+  </Folder>
+</Solution>

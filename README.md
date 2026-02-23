@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/badge/PostgreSQL-16-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
 <img src="https://img.shields.io/badge/EF_Core-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"/>
 
-# ⚽ Adesso World League
+# ⚽ World League
 
 
 
@@ -35,7 +35,7 @@
 
 ## Overview
 
-A **.NET 10 Web API** that performs a randomized group draw for the **Adesso World League** — 32 teams from 8 countries distributed across groups with full constraint enforcement (no two teams from the same country in the same group).
+A **.NET 10 Web API** that performs a randomized group draw for the **World League** — 32 teams from 8 countries distributed across groups with full constraint enforcement (no two teams from the same country in the same group).
 
 Includes a lightweight **draw UI** served directly from the API — no separate frontend project needed.
 
@@ -55,7 +55,7 @@ Includes a lightweight **draw UI** served directly from the API — no separate 
 # src/.../appsettings.json → DefaultConnection
 
 # 2. Run (migrations + seeding apply automatically)
-cd src/AdessoWorldLeague.API
+cd src/WorldLeague.API
 dotnet run
 ```
 
@@ -105,7 +105,7 @@ Content-Type: application/json
 
 ## Genel Bakış
 
-**Adesso World League** için rastgele grup çekilişi yapan bir **.NET 10 Web API**'si — 8 ülkeden 32 takımı gruplara tam kısıt uygulamasıyla dağıtır (aynı grupta aynı ülkeden iki takım olamaz).
+**World League** için rastgele grup çekilişi yapan bir **.NET 10 Web API**'si — 8 ülkeden 32 takımı gruplara tam kısıt uygulamasıyla dağıtır (aynı grupta aynı ülkeden iki takım olamaz).
 
 Ayrı bir frontend projesine gerek kalmadan doğrudan API'den sunulan hafif bir **kura UI**'ı içerir.
 
@@ -125,7 +125,7 @@ Ayrı bir frontend projesine gerek kalmadan doğrudan API'den sunulan hafif bir 
 # src/.../appsettings.json → DefaultConnection
 
 # 2. Çalıştır (migration + seed otomatik uygulanır)
-cd src/AdessoWorldLeague.API
+cd src/WorldLeague.API
 dotnet run
 ```
 
@@ -230,5 +230,6 @@ PostgreSQL
 
 📄 [`docs/documentation-en.md`](docs/documentation-en.md) · [`docs/documentation-tr.md`](docs/documentation-tr.md) · [`docs/testing.md`](docs/testing.md)
 
+Made with ❤️ for Code Challenge
 
 </div>

@@ -1,4 +1,4 @@
-# Adesso World League API — Technical Documentation (EN)
+# World League API — Technical Documentation (EN)
 
 ## 1. Technology Choices
 
@@ -53,7 +53,7 @@ HTTP Request
 ### Folder Structure
 
 ```
-src/AdessoWorldLeague.API/
+src/WorldLeague.API/
 ├── Abstractions/           → ITeamDataProvider + TeamRecord
 ├── Controllers/            → DrawController (HTTP layer only)
 ├── Data/                   → AppDbContext + EF entity configuration
