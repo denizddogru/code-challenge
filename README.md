@@ -230,6 +230,5 @@ PostgreSQL
 
 📄 [`docs/documentation-en.md`](docs/documentation-en.md) · [`docs/documentation-tr.md`](docs/documentation-tr.md) · [`docs/testing.md`](docs/testing.md)
 
-Made with ❤️ for Adesso Code Challenge
 
 </div>
