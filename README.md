@@ -201,10 +201,4 @@ PostgreSQL
 
 ---
 
-<div align="center">
 
-📄 See [`docs/documentation-en.md`](docs/documentation-en.md) and [`docs/documentation-tr.md`](docs/documentation-tr.md) for full technical documentation.
-
-Made with ❤️ for Adesso Code Challenge
-
-</div>
