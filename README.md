@@ -224,12 +224,4 @@ PostgreSQL
 </tr>
 </table>
 
----
 
-<div align="center">
-
-📄 [`docs/documentation-en.md`](docs/documentation-en.md) · [`docs/documentation-tr.md`](docs/documentation-tr.md) · [`docs/testing.md`](docs/testing.md)
-
-Made with ❤️ for Code Challenge
-
-</div>
