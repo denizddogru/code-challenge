@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/badge/EF_Core-10.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"/>
 <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
 
-# ⚽ Adesso World League API
+# ⚽ Adesso World League
 
 </div>
 
@@ -23,10 +23,13 @@
 
 A **.NET 10 Web API** that performs a randomized group draw for the **Adesso World League** — 32 teams from 8 countries distributed across groups with full constraint enforcement (no two teams from the same country in the same group).
 
+Includes a lightweight **draw UI** served directly from the API — no separate frontend project needed.
+
 ## Features
 
-- 🎲 **Randomized draw** — round-robin slot filling with live country constraint checks
-- 🗃️ **PostgreSQL persistence** — every draw is saved with drawer info
+- 🖥️ **Draw UI** — simple web interface, no extra setup
+- 🎲 **Randomized draw** — round-robin with live country constraint checks
+- 🗃️ **PostgreSQL persistence** — every draw saved with drawer info
 - 🌐 **Dual API docs** — Scalar (DeepSpace) + Swagger UI
 - 🌍 **Localization** — error messages in TR (default) and EN
 - ⚙️ **Configurable groups** — `n = 4` (8 teams/group) or `n = 8` (4 teams/group)
@@ -37,15 +40,16 @@ A **.NET 10 Web API** that performs a randomized group draw for the **Adesso Wor
 # 1. Update connection string
 # src/.../appsettings.json → DefaultConnection
 
-# 2. Run (migrations apply automatically)
+# 2. Run (migrations + seeding apply automatically)
 cd src/AdessoWorldLeague.API
 dotnet run
 ```
 
-| Explorer | URL |
+| | URL |
 |---|---|
-| Scalar | `http://localhost:5000/scalar` |
-| Swagger | `http://localhost:5000/swagger` |
+| 🖥️ **Draw UI** | `http://localhost:5116` |
+| 📘 **Scalar** | `http://localhost:5116/scalar` |
+| 📗 **Swagger** | `http://localhost:5116/swagger` |
 
 ## API
 
@@ -77,6 +81,7 @@ Content-Type: application/json
 
 - **ASP.NET Core 10** — Web API (controller-based)
 - **EF Core 10 + Npgsql** — PostgreSQL ORM
+- **Static HTML + Tailwind CDN** — Draw UI (wwwroot)
 - **Scalar** — Modern API explorer
 - **Swashbuckle** — Swagger UI
 - **IStringLocalizer** — TR/EN localization
@@ -88,8 +93,11 @@ Content-Type: application/json
 
 **Adesso World League** için rastgele grup çekilişi yapan bir **.NET 10 Web API**'si — 8 ülkeden 32 takımı gruplara tam kısıt uygulamasıyla dağıtır (aynı grupta aynı ülkeden iki takım olamaz).
 
+Ayrı bir frontend projesine gerek kalmadan doğrudan API'den sunulan hafif bir **kura UI**'ı içerir.
+
 ## Özellikler
 
+- 🖥️ **Kura UI** — basit web arayüzü, ek kurulum gerektirmez
 - 🎲 **Rastgele kura** — anlık ülke kısıt kontrolüyle round-robin slot dolumu
 - 🗃️ **PostgreSQL kalıcılığı** — her kura kurayı çekenin bilgisiyle kaydedilir
 - 🌐 **Çift API dökümanı** — Scalar (DeepSpace) + Swagger UI
@@ -102,15 +110,16 @@ Content-Type: application/json
 # 1. Connection string'i güncelle
 # src/.../appsettings.json → DefaultConnection
 
-# 2. Çalıştır (migration otomatik uygulanır)
+# 2. Çalıştır (migration + seed otomatik uygulanır)
 cd src/AdessoWorldLeague.API
 dotnet run
 ```
 
-| Explorer | URL |
+| | URL |
 |---|---|
-| Scalar | `http://localhost:5000/scalar` |
-| Swagger | `http://localhost:5000/swagger` |
+| 🖥️ **Kura UI** | `http://localhost:5116` |
+| 📘 **Scalar** | `http://localhost:5116/scalar` |
+| 📗 **Swagger** | `http://localhost:5116/swagger` |
 
 ## API
 
@@ -142,11 +151,27 @@ Content-Type: application/json
 
 - **ASP.NET Core 10** — Web API (controller tabanlı)
 - **EF Core 10 + Npgsql** — PostgreSQL ORM
+- **Static HTML + Tailwind CDN** — Kura UI (wwwroot)
 - **Scalar** — Modern API explorer
 - **Swashbuckle** — Swagger UI
 - **IStringLocalizer** — TR/EN lokalizasyon
 
 </td>
+</tr>
+</table>
+
+---
+
+## 🖼️ Screenshots
+
+<table>
+<tr>
+<td align="center"><b>Kura UI</b></td>
+<td align="center"><b>Kura Sonucu</b></td>
+</tr>
+<tr>
+<td><img src="docs/screenshots/ui-form.png" alt="Draw UI Form"/></td>
+<td><img src="docs/screenshots/ui-result.png" alt="Draw Result"/></td>
 </tr>
 </table>
 
@@ -161,8 +186,8 @@ Content-Type: application/json
 <td valign="top">
 
 ```
-HTTP Request
-    ↓
+Browser (UI)
+    ↓  fetch POST /api/draw
 GlobalExceptionHandler
     ↓
 DrawController  (no try-catch)
@@ -180,8 +205,8 @@ PostgreSQL
 <td valign="top">
 
 ```
-HTTP İsteği
-    ↓
+Tarayıcı (UI)
+    ↓  fetch POST /api/draw
 GlobalExceptionHandler
     ↓
 DrawController  (try-catch yok)

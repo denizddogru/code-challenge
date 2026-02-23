@@ -10,8 +10,10 @@
 | Npgsql.EntityFrameworkCore.PostgreSQL | 10 | PostgreSQL için resmi EF Core sağlayıcısı |
 | PostgreSQL | — | Güvenilir, ACID uyumlu, UUID native destekli |
 | Scalar.AspNetCore | 2.x | Swagger UI'ın yerini alan modern, temiz API explorer |
-| Microsoft.AspNetCore.OpenApi | 10 | Native .NET OpenAPI spec üretimi (Swashbuckle olmadan) |
+| Swashbuckle.AspNetCore | 10.x | Scalar ile birlikte klasik Swagger UI |
+| Microsoft.AspNetCore.OpenApi | 10 | Native .NET OpenAPI spec üretimi |
 | Microsoft.Extensions.Localization | 10 | `IStringLocalizer<T>` ile yerleşik .NET lokalizasyon |
+| Tailwind CSS CDN | 3.x | UI stili — build adımı yok, CDN üzerinden yüklenir |
 
 ---
 
@@ -57,14 +59,25 @@ src/AdessoWorldLeague.API/
 ├── Data/                   → AppDbContext + EF entity konfigürasyonu
 ├── DTOs/                   → DrawRequest, DrawResponse, GroupDto, TeamDto
 ├── Entities/               → DrawSession, Group, Team
-├── Infrastructure/         → StaticTeamDataProvider (somut veri kaynağı)
+├── Infrastructure/         → StaticTeamDataProvider, DbSeeder
 ├── Middleware/             → GlobalExceptionHandler
+├── Migrations/             → EF Core migration'ları (başlangıçta otomatik uygulanır)
 ├── Resources/              → DrawMessages.resx (TR), DrawMessages.en.resx (EN)
 ├── Services/               → IDrawService, DrawService
+├── wwwroot/                → index.html (Kura UI — "/" adresinde servis edilir)
 ├── DrawMessages.cs         → Localizer marker sınıfı
 ├── Program.cs              → Başlangıç, DI kayıtları
 └── appsettings.json        → Konfigürasyon (connection string)
 ```
+
+### URL Haritası
+
+| URL | Açıklama |
+|---|---|
+| `http://localhost:5116/` | Kura UI |
+| `http://localhost:5116/scalar` | Scalar API explorer |
+| `http://localhost:5116/swagger` | Swagger UI |
+| `http://localhost:5116/api/draw` | REST endpoint (POST) |
 
 ### Veritabanı Şeması
 
