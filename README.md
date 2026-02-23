@@ -7,6 +7,21 @@
 
 # ⚽ Adesso World League
 
+---
+
+## 🖼️ Screenshots
+
+<table>
+<tr>
+<td align="center"><b>Kura UI</b></td>
+<td align="center"><b>Kura Sonucu</b></td>
+</tr>
+<tr>
+<td><img src="docs/screenshots/ui-form.png" alt="Draw UI Form"/></td>
+<td><img src="docs/screenshots/ui-result.png" alt="Draw Result"/></td>
+</tr>
+</table>
+
 </div>
 
 ---
@@ -160,20 +175,7 @@ Content-Type: application/json
 </tr>
 </table>
 
----
 
-## 🖼️ Screenshots
-
-<table>
-<tr>
-<td align="center"><b>Kura UI</b></td>
-<td align="center"><b>Kura Sonucu</b></td>
-</tr>
-<tr>
-<td><img src="docs/screenshots/ui-form.png" alt="Draw UI Form"/></td>
-<td><img src="docs/screenshots/ui-result.png" alt="Draw Result"/></td>
-</tr>
-</table>
 
 ---
 
