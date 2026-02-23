@@ -71,6 +71,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseExceptionHandler();
 app.UseHttpsRedirection();
+app.UseDefaultFiles();   // serves index.html at "/"
+app.UseStaticFiles();    // serves wwwroot/
 app.UseAuthorization();
 app.MapControllers();
 
