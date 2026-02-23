@@ -51,7 +51,8 @@ Open `src/AdessoWorldLeague.API/appsettings.json` and update the `DefaultConnect
 
 ---
 
-## Step 3: Run the API
+## Step 3: Run the API (migrations + seeding happen automatically)
+
 
 ```bash
 cd src/AdessoWorldLeague.API
@@ -67,14 +68,14 @@ info: Microsoft.Hosting.Lifetime[14]
 
 ---
 
-## Step 4: Open Scalar API Explorer
+## Step 4: Open API Explorer
 
-Navigate to:
-```
-http://localhost:5000/scalar
-```
+Two explorers are available in Development mode:
 
-You will see the interactive Scalar UI with the `POST /api/draw` endpoint documented.
+| Explorer | URL | Notes |
+|---|---|---|
+| **Scalar** | `http://localhost:5000/scalar` | Modern UI, DeepSpace theme |
+| **Swagger** | `http://localhost:5000/swagger` | Classic UI |
 
 ---
 

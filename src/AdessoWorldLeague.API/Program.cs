@@ -4,14 +4,28 @@ using AdessoWorldLeague.API.Infrastructure;
 using AdessoWorldLeague.API.Middleware;
 using AdessoWorldLeague.API.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
+// Native OpenAPI spec (used by Scalar)
 builder.Services.AddOpenApi();
 
-// Localization — TR is the default culture (DrawMessages.resx), EN via DrawMessages.en.resx
+// Swashbuckle (used by Swagger UI)
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Adesso World League API",
+        Version = "v1",
+        Description = "Randomized group draw API for the Adesso World League."
+    });
+});
+
+// Localization — TR default (DrawMessages.resx), EN via DrawMessages.en.resx
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 // Database
@@ -28,13 +42,30 @@ builder.Services.AddProblemDetails();
 
 var app = builder.Build();
 
+// Run migrations and seed on startup
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await db.Database.MigrateAsync();
+    await DbSeeder.SeedAsync(scope.ServiceProvider);
+}
+
 if (app.Environment.IsDevelopment())
 {
+    // Scalar — modern API explorer
     app.MapOpenApi();
     app.MapScalarApiReference(options =>
     {
         options.Title = "Adesso World League API";
         options.Theme = ScalarTheme.DeepSpace;
+    });
+
+    // Swagger UI — classic API explorer
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Adesso World League API v1");
+        options.RoutePrefix = "swagger";
     });
 }
 
