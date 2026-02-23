@@ -32,8 +32,7 @@ public class DrawService : IDrawService
         if (string.IsNullOrWhiteSpace(request.DrawerFirstName) || string.IsNullOrWhiteSpace(request.DrawerLastName))
             throw new ArgumentException(_localizer["DrawerNameRequired"]);
 
-        var pool = BuildShuffledPool();
-        var groupSlots = PerformDraw(pool, request.GroupCount);
+        var groupSlots = PerformDraw(_teamDataProvider.GetAll(), request.GroupCount);
         var drawnAt = DateTime.UtcNow;
 
         await PersistAsync(request, groupSlots, drawnAt);
@@ -41,20 +40,23 @@ public class DrawService : IDrawService
         return MapToResponse(request, groupSlots, drawnAt);
     }
 
-    // Fetches all teams from the provider and shuffles them randomly
-    private List<TeamRecord> BuildShuffledPool()
+    // Retries with a new shuffle whenever a deadlock is encountered.
+    // Deadlocks are rare but possible with greedy round-robin on certain shuffle orderings.
+    private static List<List<TeamRecord>> PerformDraw(IReadOnlyList<TeamRecord> allTeams, int groupCount)
     {
-        var random = new Random();
-        return _teamDataProvider.GetAll()
-            .OrderBy(_ => random.Next())
-            .ToList();
+        while (true)
+        {
+            var shuffled = allTeams.OrderBy(_ => Random.Shared.Next()).ToList();
+            var result = TryAssign(shuffled, groupCount);
+            if (result is not null)
+                return result;
+        }
     }
 
-    // Core draw: round-robin slot filling with country-uniqueness constraint per group
-    // Slot 1 → A, B, C...n | Slot 2 → A, B, C...n | until all slots filled
-    private static List<List<TeamRecord>> PerformDraw(List<TeamRecord> pool, int groupCount)
+    // Core draw: round-robin slot filling with country-uniqueness constraint per group.
+    // Returns null if no valid candidate exists for a slot (deadlock) — caller will retry.
+    private static List<List<TeamRecord>>? TryAssign(List<TeamRecord> pool, int groupCount)
     {
-        var random = new Random();
         int teamsPerGroup = pool.Count / groupCount;
 
         var groups = Enumerable.Range(0, groupCount)
@@ -73,7 +75,10 @@ public class DrawService : IDrawService
                     .Where(t => !usedCountries.Contains(t.Country))
                     .ToList();
 
-                var pick = candidates[random.Next(candidates.Count)];
+                if (candidates.Count == 0)
+                    return null; // Deadlock — signal retry with different shuffle
+
+                var pick = candidates[Random.Shared.Next(candidates.Count)];
                 groups[g].Add(pick);
                 pool.Remove(pick);
             }
