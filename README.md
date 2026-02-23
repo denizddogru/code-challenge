@@ -82,14 +82,14 @@ Content-Type: application/json
 
 | # | Country | Teams |
 |---|---|---|
-| 1 | 🇹🇷 Türkiye | İstanbul, Ankara, İzmir, Antalya |
-| 2 | 🇩🇪 Almanya | Berlin, Frankfurt, Münih, Dortmund |
-| 3 | 🇫🇷 Fransa | Paris, Marsilya, Nice, Lyon |
-| 4 | 🇳🇱 Hollanda | Amsterdam, Rotterdam, Lahey, Eindhoven |
-| 5 | 🇵🇹 Portekiz | Lisbon, Porto, Braga, Coimbra |
-| 6 | 🇮🇹 İtalya | Roma, Milano, Venedik, Napoli |
-| 7 | 🇪🇸 İspanya | Sevilla, Madrid, Barselona, Granada |
-| 8 | 🇧🇪 Belçika | Brüksel, Brugge, Gent, Anvers |
+| 1 | 🇹🇷 Turkey | Istanbul, Ankara, Izmir, Antalya |
+| 2 | 🇩🇪 Germany | Berlin, Frankfurt, Munich, Dortmund |
+| 3 | 🇫🇷 France | Paris, Marseille, Nice, Lyon |
+| 4 | 🇳🇱 Netherlands | Amsterdam, Rotterdam, Lahey, Eindhoven |
+| 5 | 🇵🇹 Portugal | Lisbon, Porto, Braga, Coimbra |
+| 6 | 🇮🇹 Italy | Roma, Milano, Venice, Napoli |
+| 7 | 🇪🇸 Spain | Sevilla, Madrid, Barselona, Granada |
+| 8 | 🇧🇪 Belgium | Brussels, Brugge, Gent, Anvers |
 
 ## Tech Stack
 
