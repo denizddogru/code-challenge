@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="GroupCountInvalid" xml:space="preserve">
+    <value>Grup sayısı 4 veya 8 olmalıdır.</value>
+  </data>
+  <data name="DrawerNameRequired" xml:space="preserve">
+    <value>Kurayı çeken kişinin ad ve soyad bilgisi zorunludur.</value>
+  </data>
+</root>

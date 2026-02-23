@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="GroupCountInvalid" xml:space="preserve">
+    <value>Group count must be 4 or 8.</value>
+  </data>
+  <data name="DrawerNameRequired" xml:space="preserve">
+    <value>Drawer first name and last name are required.</value>
+  </data>
+</root>
